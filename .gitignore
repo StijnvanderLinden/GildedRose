@@ -230,3 +230,8 @@ $RECYCLE.BIN/
 *.msi
 *.msm
 *.msp
+
+.vs
+gitignore
+psake.bat
+.nuget

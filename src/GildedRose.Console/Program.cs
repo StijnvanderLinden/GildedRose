@@ -1,10 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using GildedRose.Console.Models;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace GildedRose.Console
 {
     class Program
     {
-        IList<Item> Items;
+        List<Item> Items;
         static void Main(string[] args)
         {
             System.Console.WriteLine("OMGHAI!");
@@ -29,6 +31,11 @@ namespace GildedRose.Console
                           };
 
             app.UpdateQuality();
+
+            foreach (Item item in app.Items)
+            {
+                System.Console.WriteLine(item);
+            }
 
             System.Console.ReadKey();
 
@@ -109,16 +116,5 @@ namespace GildedRose.Console
                 }
             }
         }
-
     }
-
-    public class Item
-    {
-        public string Name { get; set; }
-
-        public int SellIn { get; set; }
-
-        public int Quality { get; set; }
-    }
-
 }

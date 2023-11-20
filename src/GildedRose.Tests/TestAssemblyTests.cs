@@ -39,31 +39,27 @@ namespace GildedRose.Tests
         }
 
         [Fact]
-        [Description("Update quality of item")]
-        public void UpdateQuality(Item item)
-        {
-
-        }
-
-        [Fact]
         [Description("Increase quality of item")]
-        public void IncreaseQuality(Item item)
+        public void IncreaseQuality()
         {
-
+            repo.IncreaseQuality(items[1]);
+            Assert.Equal(items[1].Quality, 1);
         }
 
         [Fact]
         [Description("Reduce quality of item")]
-        public void ReduceQuality(Item item, bool conjured)
+        public void ReduceQuality()
         {
-
+            repo.ReduceQuality(items[5], true);
+            Assert.Equal(items[5].Quality, 4);
         }
 
         [Fact]
         [Description("Reduce SellIn of item")]
-        public void ReduceSellIn(Item item)
+        public void ReduceSellIn()
         {
-
+            repo.ReduceSellIn(items[1]);
+            Assert.Equal(items[1].SellIn, 1);
         }
     }
 }

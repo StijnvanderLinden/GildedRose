@@ -19,7 +19,7 @@ namespace GildedRose.Console.Repositories
                         new Item {Name = "Conjured Mana Cake", SellIn = 3, Quality = 6}
                     };
         }
-        public void AddQuality(Item item)
+        public void IncreaseQuality(Item item)
         {
             if (item.SellIn == 0 && item.Name == "Backstage passes to a TAFKAL80ETC concert")
             {
@@ -48,7 +48,7 @@ namespace GildedRose.Console.Repositories
             item.Quality += 1;
         }
 
-        public void DropQuality(Item item, bool conjured)
+        public void ReduceQuality(Item item, bool conjured)
         {
             //if quality is 0, nothing to do here
             if (item.Quality == 0)
@@ -76,7 +76,7 @@ namespace GildedRose.Console.Repositories
             return;
         }
 
-        public void DropSellIn(Item item)
+        public void ReduceSellIn(Item item)
         {
             item.SellIn = Math.Max(item.SellIn - 1, 0);
         }
@@ -91,28 +91,28 @@ namespace GildedRose.Console.Repositories
             switch (item.Name)
             {
                 case "+5 Dexterity Vest":
-                    DropSellIn(item);
-                    DropQuality(item, false);
+                    ReduceSellIn(item);
+                    ReduceQuality(item, false);
                     break;
 
                 case "Elixir of the Mongoose":
-                    DropSellIn(item);
-                    DropQuality(item, false);
+                    ReduceSellIn(item);
+                    ReduceQuality(item, false);
                     break;
 
                 case "Aged Brie":
-                    DropSellIn(item);
-                    AddQuality(item);
+                    ReduceSellIn(item);
+                    IncreaseQuality(item);
                     break;
 
                 case "Conjured Mana Cake":
-                    DropSellIn(item);
-                    DropQuality(item, true);
+                    ReduceSellIn(item);
+                    ReduceQuality(item, true);
                     break;
 
                 case "Backstage passes to a TAFKAL80ETC concert":
-                    DropSellIn(item);
-                    AddQuality(item);
+                    ReduceSellIn(item);
+                    IncreaseQuality(item);
                     break;
             }
         }

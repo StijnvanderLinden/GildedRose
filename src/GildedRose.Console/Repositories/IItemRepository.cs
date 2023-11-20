@@ -7,8 +7,8 @@ namespace GildedRose.Console.Repositories
     {
         List<Item> GetItems();
         void UpdateQuality(Item item);
-        void AddQuality(Item item);
-        void DropQuality(Item item, bool conjured);
-        void DropSellIn(Item item);
+        void IncreaseQuality(Item item);
+        void ReduceQuality(Item item, bool conjured);
+        void ReduceSellIn(Item item);
     }
 }

@@ -1,5 +1,6 @@
 ﻿using GildedRose.Console.Models;
 using GildedRose.Console.Repositories;
+using System.Linq;
 
 namespace GildedRose.Console
 {
@@ -20,12 +21,15 @@ namespace GildedRose.Console
 
             System.Console.ReadKey();
 
-            foreach (Item item in app.repo.GetItems())
+            while (app.repo.GetItems().Where(x => x.Quality > 0).Any())
             {
-                app.repo.UpdateQuality(item);
-                System.Console.WriteLine(item);
+                foreach (Item item in app.repo.GetItems())
+                {
+                    app.repo.UpdateQuality(item);
+                    System.Console.WriteLine(item);
+                }
+                System.Console.ReadKey();
             }
-            System.Console.ReadKey();
         }
     }
 }

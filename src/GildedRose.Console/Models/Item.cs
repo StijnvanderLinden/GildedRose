@@ -1,6 +1,6 @@
 ﻿namespace GildedRose.Console.Models
 {
-    internal class Item
+    public class Item
     {
         public string Name { get; set; }
 

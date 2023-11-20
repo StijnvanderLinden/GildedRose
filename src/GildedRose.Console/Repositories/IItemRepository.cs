@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace GildedRose.Console.Repositories
 {
-    internal interface IItemRepository
+    public interface IItemRepository
     {
         List<Item> GetItems();
         void UpdateQuality(Item item);

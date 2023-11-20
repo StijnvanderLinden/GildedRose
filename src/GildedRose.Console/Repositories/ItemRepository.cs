@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace GildedRose.Console.Repositories
 {
-    internal class ItemRepository : IItemRepository
+    public class ItemRepository : IItemRepository
     {
         List<Item> items;
         public ItemRepository()

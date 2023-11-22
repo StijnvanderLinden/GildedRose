@@ -86,7 +86,7 @@ namespace GildedRose.Console.Repositories
             return items;
         }
 
-        public void UpdateQuality(Item item)
+        public void Update(Item item)
         {
             switch (item.Name)
             {

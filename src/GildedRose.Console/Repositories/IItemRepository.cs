@@ -6,7 +6,7 @@ namespace GildedRose.Console.Repositories
     public interface IItemRepository
     {
         List<Item> GetItems();
-        void UpdateQuality(Item item);
+        void Update(Item item);
         void IncreaseQuality(Item item);
         void ReduceQuality(Item item, bool conjured);
         void ReduceSellIn(Item item);

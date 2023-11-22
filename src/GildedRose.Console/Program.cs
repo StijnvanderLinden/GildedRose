@@ -25,7 +25,7 @@ namespace GildedRose.Console
             {
                 foreach (Item item in app.repo.GetItems())
                 {
-                    app.repo.UpdateQuality(item);
+                    app.repo.Update(item);
                     System.Console.WriteLine(item);
                 }
                 System.Console.ReadKey();
